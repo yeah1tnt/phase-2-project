@@ -1,14 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { BrowserRouter as Router,Routes, Route,Link } from 'react-router-dom';
 import logo from '../logo.svg';
 import '../App.css';
 
 import HomePage from './Home';
 import AboutPage from './About';
+import WordsForm from './WordsForm';
 
 function App() {
-  //Navigation
-  const [page,setPage] = useState("List");
   
   return (
     <Router>
@@ -21,6 +20,7 @@ function App() {
         <Route path="/" element={<HomePage></HomePage>}></Route> 
         <Route path="/About" element={<AboutPage></AboutPage>}></Route>
       </Routes>
+      <WordsForm></WordsForm>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
