@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
-import { BrowserRouter as Router,Switch,Route,Link } from 'react-router-dom';
+import { BrowserRouter as Router,Routes, Route,Link } from 'react-router-dom';
 import logo from '../logo.svg';
 import '../App.css';
-import './Home';
+
+import HomePage from './Home';
+import AboutPage from './About';
 
 function App() {
   //Navigation
@@ -10,16 +12,15 @@ function App() {
   
   return (
     <Router>
-
       <div className="App">
-        <nav>
-          <ul>
-            
+        <nav>            
               <Link to="/">Home </Link>
-              <Link to="/About"> About</Link>
-            
-          </ul>
+              <Link to="/About"> About</Link>         
         </nav>
+      <Routes>
+        <Route path="/" element={<HomePage></HomePage>}></Route> 
+        <Route path="/About" element={<AboutPage></AboutPage>}></Route>
+      </Routes>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
@@ -31,7 +32,7 @@ function App() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn React
+            Blog
           </a>
         </header>
       </div>
