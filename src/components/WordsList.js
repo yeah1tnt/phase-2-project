@@ -7,12 +7,27 @@ function WordsList(){
         fetch("http://localhost:4000/words")
         .then((r)=>r.json())
         .then((data)=>{
-            setWords(data.map((wordObj)=>wordObj.word));
+            setWords(data);
         })
     },[])
+    
+    const deleteWord = (id) => {
+
+        fetch(`http://localhost:4000/words/${id}`,{
+            method: "DELETE",
+        })
+        .then((r)=>r.json())
+        .then(()=>{
+            setWords((data)=>data.filter((w)=> w.id !== id))
+        })
+    }
+
 
     const listWords = words.map((word) => (
-        <li>{word}</li>
+        <li key={word.id}>
+            {word.word}
+            <button onClick={()=>deleteWord(word.id)}>Delete</button>
+        </li>
     ))
 
 
