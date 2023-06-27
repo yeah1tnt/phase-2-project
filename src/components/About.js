@@ -1,12 +1,15 @@
 import React from "react";
-import WordsList from "./WordsList";
 
 function AboutPage(){
     return(
         <div>
             <h1>About Page</h1>
             <p>This project is made by Tong Tang</p>
-            <WordsList></WordsList>
+            <a
+            className="App-link"
+            href="https://yeah1tnt.github.io/"
+            target="_blank"
+            rel="noopener noreferrer">Blog</a>
         </div>
     )
 }

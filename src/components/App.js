@@ -5,7 +5,8 @@ import '../App.css';
 
 import HomePage from './Home';
 import AboutPage from './About';
-import WordsForm from './WordsForm';
+import GamePage from './Game';
+import ListPage from './List';
 
 function App() {
   
@@ -13,27 +14,25 @@ function App() {
     <Router>
       <div className="App">
         <nav>            
-              <Link to="/">Home </Link>
-              <Link to="/About"> About</Link>         
+              <Link to="/"> Home </Link>
+              <Link to="/Game"> Game </Link>
+              <Link to="/List"> List </Link>
+              <Link to="/About"> About </Link>         
         </nav>
       <Routes>
-        <Route path="/" element={<HomePage></HomePage>}></Route> 
+        <Route path="/" element={<HomePage></HomePage>}></Route>
+        <Route path="/Game" element={<GamePage></GamePage>}></Route>
         <Route path="/About" element={<AboutPage></AboutPage>}></Route>
+        <Route path="/List" element={<ListPage></ListPage>}></Route>
       </Routes>
-      <WordsForm></WordsForm>
+
+
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             Super fat.
           </p>
-          <a
-            className="App-link"
-            href="https://yeah1tnt.github.io/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Blog
-          </a>
+          
         </header>
       </div>
 

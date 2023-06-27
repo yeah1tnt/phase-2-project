@@ -33,8 +33,6 @@ function WordsList(){
 
     return (
         <div>
-        <h1>Word Lists in the database</h1>
-
         <ul>{listWords}</ul>
         </div>
     )
