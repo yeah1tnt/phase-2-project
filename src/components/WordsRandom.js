@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 function WordsRandom(){
     const [word,setWord] = useState([]);
     const [isVisible,setIsVisible] = useState(true);
+
     useEffect(()=>{
         fetchWords();
     },[])
@@ -12,7 +13,7 @@ function WordsRandom(){
         .then((r)=>r.json())
         .then((data=>{
             setWord(data[0]);
-            setIsVisible(true);
+            setIsVisible(true); //Set button
         }))
     }
     const handleAddWord = () => {
@@ -21,11 +22,11 @@ function WordsRandom(){
             headers: {
                 "Content-Type":"application/json",
             },
-            body: JSON.stringify({word})
+            body: JSON.stringify({word}) //Add word into the database
         })
         .then((r)=>r.json())
         .then(()=>{
-            setIsVisible(false);
+            setIsVisible(false); //Clear button
         })
 
     }

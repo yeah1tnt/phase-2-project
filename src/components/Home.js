@@ -5,11 +5,11 @@ function HomePage(){
     return (
         <div>
             <h3>Instruction:</h3>
-            <p>Home: Enter a new word to add it into the data base
+            <p><b>Home:</b> Enter a new word to add it into the data base
                 if the word is already the database, the word will not be added<br></br>
-                Game: Generate a random word from a public API and
+                <b>Game:</b> Generate a random word from a public API and
                 have the option to save it to db.json<br></br>
-                List: Show a list of words in db.json and give option to delete the word
+                <b>List:</b> Show a list of words in db.json and give option to delete the word
             </p>
             <br></br>
             <WordsForm></WordsForm>

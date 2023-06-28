@@ -1,41 +1,61 @@
-.App {
-  text-align: center;
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 .App{
-  background-color:#00153d;
   color:white;
-}
-.App-header {
-  background-color: #00153d;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6);
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(90deg, #494949, #040f6e);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+a:link{
+  color:rgb(255, 255, 255);
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+a:visited {
+  color:rgb(255, 255, 255);
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+a:active {
+  color:rgb(0, 0, 0);
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+ul{
+  display:table;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin:0px auto 0px auto;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
