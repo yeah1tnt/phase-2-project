@@ -13,7 +13,7 @@ function WordsList(){
     
     const deleteWord = (id) => {
 
-        fetch(`${apiURL}/word/${id}`,{
+        fetch(`${apiURL}/words/${id}`,{
             method: "DELETE",
         })
         .then((r)=>r.json())
