@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from "react";
-
+const apiURL = process.env.REACT_APP_BACKEND_API_URL
 function WordsList(){
     const [words, setWords] = useState([]);
 
     useEffect(()=>{
-        fetch("http://localhost:4000/words")
+        fetch(`${apiURL}/words`)
         .then((r)=>r.json())
         .then((data)=>{
             setWords(data);
@@ -13,7 +13,7 @@ function WordsList(){
     
     const deleteWord = (id) => {
 
-        fetch(`http://localhost:4000/words/${id}`,{
+        fetch(`${apiURL}/${id}`,{
             method: "DELETE",
         })
         .then((r)=>r.json())

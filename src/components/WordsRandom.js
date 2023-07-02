@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+const apiURL = process.env.REACT_APP_BACKEND_API_URL
 function WordsRandom(){
     const [word,setWord] = useState([]);
     const [isVisible,setIsVisible] = useState(true);
@@ -17,7 +17,7 @@ function WordsRandom(){
         }))
     }
     const handleAddWord = () => {
-        fetch("http://localhost:4000/words",{
+        fetch(`${apiURL}/words`,{
             method: "POST",
             headers: {
                 "Content-Type":"application/json",

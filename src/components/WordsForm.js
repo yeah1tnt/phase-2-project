@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+const apiURL = process.env.REACT_APP_BACKEND_API_URL
 function WordsForm() {
     const [words, setWords] = useState("");
     const [existingWords, setExistingWords] = useState([]);
@@ -12,7 +12,7 @@ function WordsForm() {
     }, []);
 
     const fetchExistingWords = () => {
-        fetch("http://localhost:4000/words")
+        fetch(`${apiURL}/words`)
             .then((r) => r.json())
             .then((data) => {
                 setExistingWords(data.map((wordObj) => wordObj.word.toLowerCase()));
@@ -37,7 +37,7 @@ function WordsForm() {
             return;
         }
 
-        fetch("http://localhost:4000/words", {
+        fetch(`${apiURL}/words`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

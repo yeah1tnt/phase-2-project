@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from "react";
-
+const apiURL = process.env.REACT_APP_BACKEND_API_URL
 function WordsGuess() {
     const [existingWords, setExistingWords] = useState([]);
     const [word,setWord] = useState("");
@@ -13,7 +13,7 @@ function WordsGuess() {
     }, []);
 
     const fetchExistingWords = () => {
-        fetch("http://localhost:4000/words")
+        fetch(`${apiURL}/words`)
             .then((r) => r.json())
             .then((data) => {
                 setExistingWords(data.map((wordObj) => wordObj.word.toLowerCase()));
