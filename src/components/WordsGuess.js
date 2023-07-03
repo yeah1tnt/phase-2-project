@@ -39,11 +39,12 @@ function WordsGuess() {
     const handleGuess = (e) => {
         setRightGuess(e);
         setWrongGuess(!e);
-        wordsCheck();
         setTimeout(()=>{
             setRightGuess(null);
             setWrongGuess(null);;
         }, 1000);
+        wordsCheck();
+        
     };
     const gameStart = () => {
         setIsVisible(true);
