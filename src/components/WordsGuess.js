@@ -40,6 +40,10 @@ function WordsGuess() {
         setRightGuess(e);
         setWrongGuess(!e);
         wordsCheck();
+        setTimeout(()=>{
+            setRightGuess(null);
+            setWrongGuess(null);;
+        }, 1000);
     };
     const gameStart = () => {
         setIsVisible(true);
