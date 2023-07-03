@@ -42,12 +42,8 @@ function WordsGuess() {
         setTimeout(()=>{
             setRightGuess(null);
             setWrongGuess(null);
-        }, 1000);
-        setTimeout(()=>{
             wordsCheck();
-        }, 1000);
-        
-
+        }, 1000);      
         
     };
     const gameStart = () => {
