@@ -41,9 +41,13 @@ function WordsGuess() {
         setWrongGuess(!e);
         setTimeout(()=>{
             setRightGuess(null);
-            setWrongGuess(null);;
+            setWrongGuess(null);
         }, 1000);
-        wordsCheck();
+        setTimeout(()=>{
+            wordsCheck();
+        }, 1000);
+        
+
         
     };
     const gameStart = () => {
